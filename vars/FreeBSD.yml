@@ -1,7 +1,8 @@
 ---
 # FreeBSD vars for vbotka.doctl
 
-# TODO: Configuring Linux Binary Compatibility
+# TODO: Configure Linux Binary Compatibility
+
 doctl_packages: []
 
 doctl_bin_dir: "/usr/local/bin"

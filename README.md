@@ -6,34 +6,34 @@ doctl (Digital Ocean Control)
 [Ansible role](https://galaxy.ansible.com/vbotka/doctl/). Install *doctl* from [https://github.com/digitalocean/doctl](https://github.com/digitalocean/doctl/). *doctl* is a command line interface for the [DigitalOcean](https://www.digitalocean.com/) API.
 
 
-Requirements.
+Requirements
 ------------
 
 None.
 
 
-Role Variables.
+Role Variables
 --------------
 
 doctl_source_version
 
-Dependencies.
+Dependencies
 ------------
 
 None.
 
-References.
------------
+References
+----------
 - [README](https://github.com/digitalocean/doctl/blob/master/README.md)
 
 
-License.
+License
 -------
 
 [![license](https://img.shields.io/badge/license-BSD-red.svg)](https://www.freebsd.org/doc/en/articles/bsdl-gpl/article.html)
 
 
-Author Information.
+Author Information
 ------------------
 
 [Vladimir Botka](https://botka.link)
