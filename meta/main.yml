@@ -7,9 +7,8 @@ galaxy_info:
   min_ansible_version: 2.3
   platforms:
     - name: Ubuntu
-    - name: Debian
-    - name: Fedora
-    - name: EL
+      versions:
+        - artful
   galaxy_tags:
     - cli
     - digitalocean
