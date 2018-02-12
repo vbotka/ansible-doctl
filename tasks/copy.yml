@@ -1,0 +1,24 @@
+---
+
+- name: Create directory for installation {{ doctl_bin_dir }}
+  file: >
+    state="directory"
+    path="{{ doctl_bin_dir }}"
+    owner="{{ doctl_bin_owner }}"
+    group="{{ doctl_bin_group }}"
+    mode="{{ doctl_bin_dir_mode }}"
+
+- name: Copy doctl to {{ doctl_bin_dir }}
+  copy: >
+    src="{{ doctl_source_dest }}/doctl-{{ doctl_source_version }}/{{ item }}"
+    dest="{{ doctl_bin_dir }}/{{ item }}"
+    remote_src="yes"
+    owner="{{ doctl_bin_owner }}"
+    group="{{ doctl_bin_group }}"
+    mode="{{ doctl_bin_mode }}"
+  with_items:
+    - doctl
+  when: not ansible_check_mode
+
+# EOF
+...

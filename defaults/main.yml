@@ -1,0 +1,18 @@
+---
+# default vars for vbotka.doctl
+
+doctl_debug: "no"
+
+# FreeBSD
+freebsd_install_method: "packages"
+#freebsd_install_method: "ports"
+#freebsd_use_packages: "yes"
+
+# source
+doctl_source_version: "1.7.1"
+doctl_source_dest: "/usr/local/src"
+doctl_source_url: "https://github.com/digitalocean/doctl/releases/download/v{{ doctl_source_version }}"
+doctl_source_file: "doctl-{{ doctl_source_version }}-linux-{{ doctl_arch }}.tar.gz"
+
+# EOF
+...

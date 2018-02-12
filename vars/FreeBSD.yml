@@ -1,0 +1,14 @@
+---
+# FreeBSD vars for vbotka.doctl
+
+# TODO: Configuring Linux Binary Compatibility
+doctl_packages: []
+
+doctl_bin_dir: "/usr/local/bin"
+doctl_bin_dir_mode: "0755"
+doctl_bin_owner: "root"
+doctl_bin_group: "wheel"
+doctl_bin_mode: "0755"
+
+# EOF
+...

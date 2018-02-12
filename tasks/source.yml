@@ -1,0 +1,39 @@
+---
+
+- name: Create directory for the source code {{ doctl_source_dest }}
+  file: >
+    state="directory"
+    path="{{ doctl_source_dest }}"
+  tags: doctl_source_fetch
+
+- name: Download sources from {{ doctl_source_url }}/{{ doctl_source_file }} to {{ doctl_source_dest }}
+  get_url: >
+    url="{{ doctl_source_url }}/{{ doctl_source_file }}"
+    dest="{{ doctl_source_dest }}"
+  tags: doctl_source_fetch
+
+- name: Check existence of {{ doctl_source_dest}}/{{ doctl_source_file }}
+  stat: path="{{ doctl_source_dest }}/{{ doctl_source_file }}"
+  register: doctl_source_file_downloaded
+  tags: doctl_source_extract
+
+- debug: msg="doctl_source_file_downloaded {{ doctl_source_file_downloaded }}"
+  when: doctl_debug|lower == "yes"
+  tags: doctl_source_extract
+
+- name: Create directory {{ doctl_source_dest }}/doctl-{{ doctl_source_version }}
+  file: >
+    state="directory"
+    path="{{ doctl_source_dest }}/doctl-{{ doctl_source_version }}"
+  tags: doctl_source_extract
+
+- name: Extract sources to {{ doctl_source_dest }}/doctl-{{ doctl_source_version }}
+  unarchive: >
+    src="{{ doctl_source_dest }}/{{ doctl_source_file }}"
+    dest="{{ doctl_source_dest }}/doctl-{{ doctl_source_version }}"
+    remote_src="yes"
+  when: doctl_source_file_downloaded.stat.exists
+  tags: doctl_source_extract
+
+# EOF
+...

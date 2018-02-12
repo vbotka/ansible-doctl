@@ -1,0 +1,56 @@
+---
+
+- name: Add {{ ansible_os_family }} specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+  tags:
+    - doctl_vars
+    - doctl_packages
+    - doctl_all
+
+- set_fact:
+    doctl_arch: "386"
+  when: ansible_architecture == "i386"
+  tags:
+    - doctl_vars
+    - doctl_packages
+    - doctl_all
+
+- set_fact:
+    doctl_arch: "amd64"
+  when: ansible_architecture == "amd64"
+  tags:
+    - doctl_vars
+    - doctl_packages
+    - doctl_all
+
+- fail: msg="Bailing out. This play requires i386 or amd64"
+  when: doctl_arch is not defined
+  tags:
+    - doctl_vars
+    - doctl_packages
+    - doctl_all
+
+- debug: msg="Architecture {{ doctl_arch }}"
+  when: doctl_debug|lower == "yes"
+  tags:
+    - doctl_vars
+    - doctl_packages
+    - doctl_all
+
+- include: packages.yml
+  tags:
+    - doctl_packages
+    - doctl_all
+
+- include: source.yml
+  tags:
+    - doctl_source
+    - doctl_all
+
+- include: copy.yml
+  tags:
+    - doctl_copy
+    - doctl_all
+
+# EOF
+...

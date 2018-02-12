@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Vladimir Botka
+  description: Install doctl from https://github.com/digitalocean/doctl/ .
+  company: https://botka.link
+  github_branch: master
+  license: BSD
+  min_ansible_version: 2.3
+  platforms:
+    - name: Ubuntu
+    - name: Debian
+    - name: Fedora
+    - name: EL
+  galaxy_tags:
+    - cli
+    - digitalocean
+dependencies: []
