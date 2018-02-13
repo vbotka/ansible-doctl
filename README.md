@@ -15,8 +15,8 @@ None.
 Role Variables
 --------------
 
-doctl_source_version: "1.7.1"
-doctl_dobro: "no"
+- doctl_source_version: "1.7.1"
+- doctl_dobro: "no"
 
 Dependencies
 ------------
