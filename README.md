@@ -25,6 +25,7 @@ None.
 References
 ----------
 - [README](https://github.com/digitalocean/doctl/blob/master/README.md)
+- [doctl: the Command Line Interface to DigitalOcean](https://blog.digitalocean.com/introducing-doctl/)
 
 
 License
