@@ -44,6 +44,6 @@
   with_items: "{{ doctl_packages }}"
   when: ansible_os_family == "RedHat"
   tags: redhat_packages
-  
+
 # EOF
 ...

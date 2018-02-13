@@ -3,7 +3,7 @@ doctl (Digital Ocean Control)
 
 [![Build Status](https://travis-ci.org/vbotka/ansible-integrity.svg?branch=master)](https://travis-ci.org/vbotka/ansible-doctl)
 
-[Ansible role](https://galaxy.ansible.com/vbotka/doctl/). Install *doctl* from [https://github.com/digitalocean/doctl](https://github.com/digitalocean/doctl/). *doctl* is a command line interface for the [DigitalOcean](https://www.digitalocean.com/) API.
+[Ansible role](https://galaxy.ansible.com/vbotka/doctl/). Install *doctl* from [https://github.com/digitalocean/doctl](https://github.com/digitalocean/doctl/). *doctl* is a command line interface for the [DigitalOcean](https://www.digitalocean.com/) API. Optionaly install [dobro](https://gitlab.com/snoopdouglas/dobro) - management of droplets by tag.
 
 
 Requirements
@@ -15,7 +15,8 @@ None.
 Role Variables
 --------------
 
-doctl_source_version
+doctl_source_version: "1.7.1"
+doctl_dobro: "no"
 
 Dependencies
 ------------
@@ -24,10 +25,11 @@ None.
 
 References
 ----------
-- [README](https://github.com/digitalocean/doctl/blob/master/README.md)
-- [doctl: the Command Line Interface to DigitalOcean](https://blog.digitalocean.com/introducing-doctl/)
-- [How To Use Doctl, the Official DigitalOcean Command-Line Client](https://www.digitalocean.com/community/tutorials/how-to-use-doctl-the-official-digitalocean-command-line-client)
-
+- [doctl - README](https://github.com/digitalocean/doctl/blob/master/README.md)
+- [doctl - The Command Line Interface to DigitalOcean](https://blog.digitalocean.com/introducing-doctl/)
+- [doctl - How To Use Doctl, the Official DigitalOcean Command-Line Client](https://www.digitalocean.com/community/tutorials/how-to-use-doctl-the-official-digitalocean-command-line-client)
+- [dobro - Manage DigitalOcean droplets by tag](https://gitlab.com/snoopdouglas/dobro)
+- [dobro - PyPi](https://pypi.python.org/pypi/dobro/)
 
 License
 -------

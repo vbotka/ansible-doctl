@@ -47,5 +47,11 @@
     - doctl_copy
     - doctl_all
 
+- include: dobro.yml
+  when: doctl_dobro|lower == "yes"
+  tags:
+    - doctl_dobro
+    - doctl_all
+
 # EOF
 ...

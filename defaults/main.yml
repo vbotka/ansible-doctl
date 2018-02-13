@@ -14,5 +14,9 @@ doctl_source_dest: "/usr/local/src"
 doctl_source_url: "https://github.com/digitalocean/doctl/releases/download/v{{ doctl_source_version }}"
 doctl_source_file: "doctl-{{ doctl_source_version }}-linux-{{ doctl_arch }}.tar.gz"
 
+# DigitalOcean droplet management tool
+# https://pypi.python.org/pypi/dobro/
+doctl_dobro: "no"
+
 # EOF
 ...

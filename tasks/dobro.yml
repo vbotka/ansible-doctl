@@ -1,0 +1,9 @@
+---
+
+# dobro - DigitalOcean droplet management tool
+- name:
+  pip: >
+    name="dobro"
+
+# EOF
+...
