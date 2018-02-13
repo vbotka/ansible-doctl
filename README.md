@@ -26,6 +26,7 @@ References
 ----------
 - [README](https://github.com/digitalocean/doctl/blob/master/README.md)
 - [doctl: the Command Line Interface to DigitalOcean](https://blog.digitalocean.com/introducing-doctl/)
+- [How To Use Doctl, the Official DigitalOcean Command-Line Client](https://www.digitalocean.com/community/tutorials/how-to-use-doctl-the-official-digitalocean-command-line-client)
 
 
 License
