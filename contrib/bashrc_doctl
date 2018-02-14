@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Examples:
+# doctl compute droplet create test $DOCTL_DROPLET --ssh-keys $DOCTL_SSH_PUBLIC_KEY_FINGERPRINT
+# doctl compute droplet delete test
+
+DOCTL_SSH_PRIVATE_KEY="$HOME/.ssh/id_rsa"
+DOCTL_SSH_PUBLIC_KEY="$DOCTL_SSH_PRIVATE_KEY.pub"
+DOCTL_SSH_PUBLIC_KEY_FINGERPRINT=$(ssh-keygen -E md5 -lf $DOCTL_SSH_PUBLIC_KEY | cut -f 2 -d " " | cut -f 2- -d":")
+# List regions: doctl compute region list
+DOCTL_REGION="ams3"
+# List sizes:   doctl compute size list
+DOCTL_SIZE="512mb"
+#DOCTL_SIZE="8gb"
+# List images:  doctl compute image list --public
+DOCTL_IMAGE="freebsd-11-1-x64"
+#DOCTL_IMAGE="freebsd-11-1-x64-zfs"
+DOCTL_DROPLET="--region $DOCTL_REGION --size $DOCTL_SIZE --image $DOCTL_IMAGE"
+# Any other doctl flags e.g. "--access-token a82be5f..."
+DOCTL_EXTRA_ARGS=""
+
+# EOF
