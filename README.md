@@ -1,7 +1,7 @@
 doctl (Digital Ocean Control)
 =============================
 
-[![Build Status](https://travis-ci.org/vbotka/ansible-integrity.svg?branch=master)](https://travis-ci.org/vbotka/ansible-doctl)
+[![Build Status](https://travis-ci.org/vbotka/ansible-doctl.svg?branch=master)](https://travis-ci.org/vbotka/ansible-doctl)
 
 - [Ansible role](https://galaxy.ansible.com/vbotka/doctl/).
 - Install *doctl* from [https://github.com/digitalocean/doctl](https://github.com/digitalocean/doctl/).
