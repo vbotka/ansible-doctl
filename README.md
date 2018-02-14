@@ -3,8 +3,11 @@ doctl (Digital Ocean Control)
 
 [![Build Status](https://travis-ci.org/vbotka/ansible-integrity.svg?branch=master)](https://travis-ci.org/vbotka/ansible-doctl)
 
-[Ansible role](https://galaxy.ansible.com/vbotka/doctl/). Install *doctl* from [https://github.com/digitalocean/doctl](https://github.com/digitalocean/doctl/). *doctl* is a command line interface for the [DigitalOcean](https://www.digitalocean.com/) API. Optionaly install [dobro](https://gitlab.com/snoopdouglas/dobro) - management of droplets by tag.
-
+- [Ansible role](https://galaxy.ansible.com/vbotka/doctl/).
+- Install *doctl* from [https://github.com/digitalocean/doctl](https://github.com/digitalocean/doctl/).
+- *doctl* is a command line interface for the [DigitalOcean](https://www.digitalocean.com/) API.
+- Optionaly install [dobro](https://gitlab.com/snoopdouglas/dobro) - management of droplets by tag.
+- See [examples](https://github.com/vbotka/ansible-doctl/blob/master/contrib/).
 
 Requirements
 ------------
