@@ -32,22 +32,22 @@
     - doctl_vars
     - doctl_all
 
-- include: packages.yml
+- import_tasks: packages.yml
   tags:
     - doctl_packages
     - doctl_all
 
-- include: source.yml
+- import_tasks: source.yml
   tags:
     - doctl_source
     - doctl_all
 
-- include: copy.yml
+- import_tasks: copy.yml
   tags:
     - doctl_copy
     - doctl_all
 
-- include: dobro.yml
+- import_tasks: dobro.yml
   when: doctl_dobro|lower == "yes"
   tags:
     - doctl_dobro
