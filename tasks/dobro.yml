@@ -1,9 +1,8 @@
 ---
 
 # dobro - DigitalOcean droplet management tool
-- name:
-  pip: >
-    name="dobro"
+- pip:
+    name: "{{ doctl_dobro_name }}"
 
 # EOF
 ...

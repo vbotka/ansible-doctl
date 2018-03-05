@@ -17,6 +17,7 @@ doctl_source_file: "doctl-{{ doctl_source_version }}-linux-{{ doctl_arch }}.tar.
 # DigitalOcean droplet management tool
 # https://pypi.python.org/pypi/dobro/
 doctl_dobro: "no"
+doctl_dobro_name: "git+https://gitlab.com/snoopdouglas/dobro"
 
 # EOF
 ...
