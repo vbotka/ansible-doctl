@@ -31,7 +31,7 @@
 - name: Install packages Debian
   apt: >
     name="{{ item }}"
-    state="installed"
+    state="present"
   with_items: "{{ doctl_packages }}"
   when: ansible_os_family == "Debian"
   tags: debian_packages
@@ -40,7 +40,7 @@
 - name: Install packages RedHat
   yum: >
     name="{{ item }}"
-    state="installed"
+    state="present"
   with_items: "{{ doctl_packages }}"
   when: ansible_os_family == "RedHat"
   tags: redhat_packages

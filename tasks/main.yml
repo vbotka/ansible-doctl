@@ -1,5 +1,13 @@
 ---
 
+- debug:
+    msg: "ansible_os_family={{ ansible_os_family }}
+          ansible_architecture={{ ansible_architecture }}"
+  when: doctl_debug|lower == "yes"
+  tags:
+    - doctl_debug
+    - doctl_all
+
 - name: Add {{ ansible_os_family }} specific variables
   include_vars: "{{ ansible_os_family }}.yml"
   tags:
@@ -15,7 +23,8 @@
 
 - set_fact:
     doctl_arch: "amd64"
-  when: ansible_architecture == "amd64"
+  when: (ansible_architecture == "amd64") or
+        (ansible_architecture == "x86_64")
   tags:
     - doctl_vars
     - doctl_all
