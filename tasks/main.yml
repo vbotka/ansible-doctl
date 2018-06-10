@@ -3,64 +3,44 @@
 - debug:
     msg: "ansible_os_family={{ ansible_os_family }}
           ansible_architecture={{ ansible_architecture }}"
-  when: doctl_debug|lower == "yes"
-  tags:
-    - doctl_debug
-    - doctl_all
+  when: doctl_debug
+  tags: doctl_debug
 
 - name: Add {{ ansible_os_family }} specific variables
   include_vars: "{{ ansible_os_family }}.yml"
-  tags:
-    - doctl_vars
-    - doctl_all
+  tags: doctl_vars
 
 - set_fact:
     doctl_arch: "386"
   when: ansible_architecture == "i386"
-  tags:
-    - doctl_vars
-    - doctl_all
+  tags: doctl_vars
 
 - set_fact:
     doctl_arch: "amd64"
   when: (ansible_architecture == "amd64") or
         (ansible_architecture == "x86_64")
-  tags:
-    - doctl_vars
-    - doctl_all
+  tags: doctl_vars
 
-- fail: msg="Bailing out. This play requires i386 or amd64"
+- fail: msg="Bailing out. This play requires i386 or amd64."
   when: doctl_arch is not defined
-  tags:
-    - doctl_vars
-    - doctl_all
+  tags: doctl_vars
 
 - debug: msg="Architecture {{ doctl_arch }}"
-  when: doctl_debug|lower == "yes"
-  tags:
-    - doctl_vars
-    - doctl_all
+  when: doctl_debug
+  tags: doctl_vars
 
 - import_tasks: packages.yml
-  tags:
-    - doctl_packages
-    - doctl_all
+  tags: doctl_packages
 
 - import_tasks: source.yml
-  tags:
-    - doctl_source
-    - doctl_all
+  tags: doctl_source
 
 - import_tasks: copy.yml
-  tags:
-    - doctl_copy
-    - doctl_all
+  tags: doctl_copy
 
 - import_tasks: dobro.yml
-  when: doctl_dobro|lower == "yes"
-  tags:
-    - doctl_dobro
-    - doctl_all
+  when: doctl_dobro
+  tags: doctl_dobro
 
 # EOF
 ...
