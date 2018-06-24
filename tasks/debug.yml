@@ -1,0 +1,8 @@
+---
+
+- debug:
+    msg: "ansible_os_family={{ ansible_os_family }}
+          ansible_architecture={{ ansible_architecture }}"
+
+# EOF
+...
