@@ -9,11 +9,12 @@
   when: (ansible_architecture == "amd64") or
         (ansible_architecture == "x86_64")
 
-- fail: msg="Bailing out. This play requires i386 or amd64."
+- fail:
+    msg: "Bailing out. This play requires i386 or amd64."
   when: doctl_arch is not defined
   tags: doctl_vars
 
-- name: vars for {{ ansible_os_family }} {{ ansible_distribution }} {{ ansible_distribution_release }}
+- name: "vars for {{ ansible_os_family }} {{ ansible_distribution }} {{ ansible_distribution_release }}"
   include_vars: "{{ item }}"
   with_first_found:
     - files:

@@ -2,7 +2,7 @@
 
 - name: "copy: Create directory for installation {{ doctl_bin_dir }}"
   file:
-    state: "directory"
+    state: directory
     path: "{{ doctl_bin_dir }}"
     owner: "{{ doctl_bin_owner }}"
     group: "{{ doctl_bin_group }}"
@@ -16,7 +16,7 @@
     group: "{{ doctl_bin_group }}"
     mode: "{{ doctl_bin_mode }}"
     remote_src: yes
-  with_items:
+  loop:
     - doctl
   when: not ansible_check_mode
 

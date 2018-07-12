@@ -2,7 +2,7 @@
 
 - name: "source: Create directory for the source code {{ doctl_source_dest }}"
   file:
-    state: "directory"
+    state: directory
     path: "{{ doctl_source_dest }}"
   tags: doctl_source_fetch
 
@@ -21,13 +21,14 @@
   register: doctl_source_file_downloaded
   tags: doctl_source_extract
 
-- debug: msg="doctl_source_file_downloaded {{ doctl_source_file_downloaded }}"
+- debug:
+    msg: "doctl_source_file_downloaded {{ doctl_source_file_downloaded }}"
   when: doctl_debug
   tags: doctl_source_extract
 
 - name: "source: Create directory {{ doctl_source_dest }}/doctl-{{ doctl_source_version }}"
   file:
-    state: "directory"
+    state: directory
     path: "{{ doctl_source_dest }}/doctl-{{ doctl_source_version }}"
   tags: doctl_source_extract
 
