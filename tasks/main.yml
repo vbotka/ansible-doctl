@@ -2,7 +2,7 @@
 # tasks for vbotka.doctl
 
 - import_tasks: vars.yml
-  tags: [ doctl_vars, always ]
+  tags: [doctl_vars, always]
 
 - import_tasks: debug.yml
   when: doctl_debug

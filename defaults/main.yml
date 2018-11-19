@@ -5,8 +5,8 @@ doctl_debug: False
 
 # FreeBSD
 freebsd_install_method: "packages"
-#freebsd_install_method: "ports"
-#freebsd_use_packages: "yes"
+# freebsd_install_method: "ports"
+# freebsd_use_packages: "yes"
 
 # source
 doctl_source_version: "1.8.0"

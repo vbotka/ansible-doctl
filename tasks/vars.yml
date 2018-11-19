@@ -1,15 +1,18 @@
 ---
 
-- set_fact:
+- name: "vars: Set doctl_arch to {{ ansible_architecture }}"
+  set_fact:
     doctl_arch: "386"
   when: ansible_architecture == "i386"
 
-- set_fact:
+- name: "vars: Set doctl_arch to {{ ansible_architecture }}"
+  set_fact:
     doctl_arch: "amd64"
   when: (ansible_architecture == "amd64") or
         (ansible_architecture == "x86_64")
 
-- fail:
+- name: "vars: Fail. This play requires i386 or amd64"
+  fail:
     msg: "Bailing out. This play requires i386 or amd64."
   when: doctl_arch is not defined
   tags: doctl_vars
