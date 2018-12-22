@@ -6,7 +6,7 @@
 
 - import_tasks: debug.yml
   when: doctl_debug
-  tags: doctl_debug
+  tags: [doctl_debug, always]
 
 - import_tasks: packages.yml
   tags: doctl_packages

@@ -10,10 +10,7 @@
   get_url:
     url: "{{ doctl_source_url }}/{{ doctl_source_file }}"
     dest: "{{ doctl_source_dest }}"
-  changed_when: False
   tags: doctl_source_fetch
-# get_url: check mode reports changes with force enabled
-# https://github.com/ansible/ansible/issues/25418
 
 - name: "source: Check existence of {{ doctl_source_dest }}/{{ doctl_source_file }}"
   stat:

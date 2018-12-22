@@ -3,10 +3,6 @@
 - name: "dobro: Install DigitalOcean droplet management tool"
   pip:
     name: "{{ doctl_dobro_name }}"
-  changed_when: False
-
-# when pip installing pip check mode is always changed
-# https://github.com/ansible/ansible/issues/12129
 
 # EOF
 ...
