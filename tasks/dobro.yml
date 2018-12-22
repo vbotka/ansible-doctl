@@ -3,6 +3,10 @@
 - name: "dobro: Install DigitalOcean droplet management tool"
   pip:
     name: "{{ doctl_dobro_name }}"
+  register: result
+  retries: "{{ pip_install_retries }}"
+  until: result is succeeded
+  delay: "{{ pip_install_delay }}"
 
 # EOF
 ...

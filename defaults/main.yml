@@ -12,6 +12,9 @@ freebsd_install_delay: 5
 # Linux
 linux_install_retries: 10
 linux_install_delay: 5
+# Python
+pip_install_retries: 10
+pip_install_delay: 5
 
 # source
 doctl_source_version: "1.12.2"
