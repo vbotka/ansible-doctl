@@ -1,9 +1,10 @@
 ---
 # FreeBSD vars for vbotka.doctl
 
-# TODO: Configure Linux Binary Compatibility
+# TODO: Check Linux Binary Compatibility configured
 
-doctl_packages: []
+doctl_packages:
+  - "devel/py-pip"
 
 doctl_bin_dir: "/usr/local/bin"
 doctl_bin_dir_mode: "0755"
