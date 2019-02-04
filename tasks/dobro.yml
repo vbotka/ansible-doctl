@@ -3,7 +3,7 @@
 - name: "dobro: Install DigitalOcean droplet management tool"
   pip:
     name: "{{ doctl_dobro_name }}"
-    executable: "{{ pip_executable }}"
+    executable: "{{ pip_executable|default(omit) }}"
   register: result
   retries: "{{ pip_install_retries }}"
   until: result is succeeded
