@@ -16,7 +16,7 @@ linux_install_delay: 5
 pip_install_retries: 10
 pip_install_delay: 5
 # source
-doctl_source_version: "1.12.2"
+doctl_source_version: "1.13.0"
 doctl_source_dest: "/usr/local/src"
 doctl_source_url: "https://github.com/digitalocean/doctl/releases/download/v{{ doctl_source_version }}"
 doctl_source_file: "doctl-{{ doctl_source_version }}-linux-{{ doctl_arch }}.tar.gz"
