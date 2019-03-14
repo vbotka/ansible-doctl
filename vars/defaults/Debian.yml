@@ -2,7 +2,7 @@
 # Debian vars for vbotka.doctl
 
 doctl_packages:
-  - python-pip
+  - python3-pip
 
 doctl_bin_dir: "/usr/local/bin"
 doctl_bin_dir_mode: "0755"
