@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: doctl
   author: Vladimir Botka
   description: Install doctl from https://github.com/digitalocean/doctl/ .
   company: https://botka.link
@@ -10,6 +11,7 @@ galaxy_info:
     - name: FreeBSD
       versions:
         - 11.2
+        - 12.0
     - name: Ubuntu
       versions:
         - bionic
