@@ -1,7 +1,7 @@
 ---
 # default vars for vbotka.doctl
 
-doctl_debug: False
+doctl_debug: false
 
 # FreeBSD
 freebsd_install_method: "packages"
@@ -24,7 +24,7 @@ doctl_source_sha256: "doctl-{{ doctl_source_version }}-linux-{{ doctl_arch }}.sh
 
 # DigitalOcean droplet management tool
 # https://pypi.python.org/pypi/dobro/
-doctl_dobro: False
+doctl_dobro: false
 doctl_dobro_name: "git+https://gitlab.com/snoopdouglas/dobro"
 
 # EOF

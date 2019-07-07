@@ -1,6 +1,7 @@
 ---
 
 - name: "dobro: Install DigitalOcean droplet management tool"
+  changed_when: false  # Note 1.
   pip:
     name: "{{ doctl_dobro_name }}"
     executable: "{{ pip_executable|default(omit) }}"
@@ -8,6 +9,10 @@
   retries: "{{ pip_install_retries }}"
   until: result is succeeded
   delay: "{{ pip_install_delay }}"
+
+# Note 1.
+# The pip module isn't always idempotent #28952
+# https://github.com/ansible/ansible/issues/28952
 
 # EOF
 ...

@@ -9,8 +9,8 @@
 - name: "source: Download sources from {{ doctl_source_url }}/{{ doctl_source_file }} to {{ doctl_source_dest }}"
   get_url:
     url: "{{ doctl_source_url }}/{{ doctl_source_file }}"
-    dest: "{{ doctl_source_dest }}"
-    checksum: "{{ lookup('file', role_path+'/files/'+doctl_source_sha256) }}"
+    dest: "{{ doctl_source_dest }}/{{ doctl_source_file }}"
+    checksum: "{{ lookup('file', role_path ~ '/files/' ~ doctl_source_sha256) }}"
   tags: doctl_source_fetch
 
 - name: "source: Check existence of {{ doctl_source_dest }}/{{ doctl_source_file }}"
@@ -34,7 +34,7 @@
   unarchive:
     src: "{{ doctl_source_dest }}/{{ doctl_source_file }}"
     dest: "{{ doctl_source_dest }}/doctl-{{ doctl_source_version }}"
-    remote_src: yes
+    remote_src: true
   when: doctl_source_file_downloaded.stat.exists
   tags: doctl_source_extract
 

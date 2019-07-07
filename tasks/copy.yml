@@ -15,7 +15,7 @@
     owner: "{{ doctl_bin_owner }}"
     group: "{{ doctl_bin_group }}"
     mode: "{{ doctl_bin_mode }}"
-    remote_src: yes
+    remote_src: true
   loop:
     - doctl
   when: not ansible_check_mode

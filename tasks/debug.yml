@@ -15,7 +15,7 @@
          doctl_source_url [ {{ doctl_source_url }} ]
          doctl_source_file [ {{ doctl_source_file }} ]
          doctl_source_sha256 [ {{ doctl_source_sha256 }} ]
-         checksum [ {{ lookup('file', role_path+'/files/'+doctl_source_sha256) }} ]
+         checksum [ {{ lookup('file', role_path ~ '/files/' ~ doctl_source_sha256) }} ]
          doctl_dobro [ {{ doctl_dobro }} ]
          doctl_dobro_name [ {{ doctl_dobro_name }} ]
   debug:
