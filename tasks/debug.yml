@@ -1,23 +1,42 @@
 ---
-
 - name: "Debug"
   vars:
     msg: |
-         ansible_architecture [ {{ ansible_architecture }} ]
-         ansible_os_family [ {{ ansible_os_family }} ]
-         ansible_distribution [ {{ ansible_distribution }} ]
-         ansible_distribution_major_version [ {{ ansible_distribution_major_version }} ]
-         ansible_distribution_version [ {{ ansible_distribution_version }} ]
-         ansible_distribution_release [ {{ ansible_distribution_release }} ]
+         ansible_architecture [{{ ansible_architecture }}]
+         ansible_os_family [{{ ansible_os_family }}]
+         ansible_distribution [{{ ansible_distribution }}]
+         ansible_distribution_major_version [{{ ansible_distribution_major_version }}]
+         ansible_distribution_version [{{ ansible_distribution_version }}]
+         ansible_distribution_release [{{ ansible_distribution_release }}]
 
-         doctl_source_version [ {{ doctl_source_version }} ]
-         doctl_source_dest [ {{ doctl_source_dest }} ]
-         doctl_source_url [ {{ doctl_source_url }} ]
-         doctl_source_file [ {{ doctl_source_file }} ]
-         doctl_source_sha256 [ {{ doctl_source_sha256 }} ]
-         checksum [ {{ lookup('file', role_path ~ '/files/' ~ doctl_source_sha256) }} ]
-         doctl_dobro [ {{ doctl_dobro }} ]
-         doctl_dobro_name [ {{ doctl_dobro_name }} ]
+         doctl_source_version [{{ doctl_source_version }}]
+         doctl_source_dest [{{ doctl_source_dest }}]
+         doctl_source_url [{{ doctl_source_url }}]
+         doctl_source_file [{{ doctl_source_file }}]
+         doctl_source_sha256 [{{ doctl_source_sha256 }}]
+         checksum [{{ lookup('file', role_path ~ '/files/' ~ doctl_source_sha256) }}]
+
+         doctl_dobro [{{ doctl_dobro }}]
+         doctl_dobro_name [{{ doctl_dobro_name }}]
+
+         doctl_packages
+         {{ doctl_packages|to_nice_yaml }}
+         doctl_bin_dir [{{ doctl_bin_dir }}]
+         doctl_bin_dir_mode [{{ doctl_bin_dir_mode }}]
+         doctl_bin_owner [{{ doctl_bin_owner }}]
+         doctl_bin_group [{{ doctl_bin_group }}]
+         doctl_bin_mode [{{ doctl_bin_mode }}]
+
+         doctl_pip_executable [{{ doctl_pip_executable }}]
+         doctl_pip_install_retries [{{ doctl_pip_install_retries }}]
+         doctl_pip_install_delay [{{ doctl_pip_install_delay }}]
+
+         freebsd_install_method [{{ freebsd_install_method }}]
+         freebsd_use_packages [{{ freebsd_use_packages }}]
+         freebsd_install_retries [{{ freebsd_install_retries }}]
+         freebsd_install_delay [{{ freebsd_install_delay }}]
+         linux_install_retries [{{ linux_install_retries }}]
+         linux_install_delay [{{ linux_install_delay }}]
   debug:
     msg: "{{ msg.split('\n') }}"
 

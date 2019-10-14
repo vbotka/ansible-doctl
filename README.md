@@ -18,7 +18,7 @@ None.
 Role Variables
 --------------
 
-- doctl_source_version: "1.8.0"
+- doctl_source_version: "1.32.3"
 - doctl_dobro: False
 
 Dependencies

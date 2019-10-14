@@ -1,14 +1,26 @@
 ---
 
+- name: "dobro: Stat {{ doctl_pip_executable }}"
+  stat:
+    path: "{{ doctl_pip_executable }}"
+  register: result
+- name: "dobro: Not exists {{ doctl_pip_executable }}"
+  debug:
+    msg: "[ERROR] {{ doctl_pip_executable }} does not exist. End of host."
+  when: not result.stat.exists
+- name: "dobro: Meta end host"
+  meta: end_host
+  when: not result.stat.exists
+
 - name: "dobro: Install DigitalOcean droplet management tool"
   changed_when: false  # Note 1.
   pip:
     name: "{{ doctl_dobro_name }}"
-    executable: "{{ pip_executable|default(omit) }}"
+    executable: "{{ doctl_pip_executable|default(omit) }}"
   register: result
-  retries: "{{ pip_install_retries }}"
+  retries: "{{ doctl_pip_install_retries }}"
   until: result is succeeded
-  delay: "{{ pip_install_delay }}"
+  delay: "{{ doctl_pip_install_delay }}"
 
 # Note 1.
 # The pip module isn't always idempotent #28952

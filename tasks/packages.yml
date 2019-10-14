@@ -1,7 +1,8 @@
 ---
 
-- debug:
-    msg: "ansible_os_family [ {{ ansible_os_family }} ]"
+- name: "packages: Debug"
+  debug:
+    msg: "ansible_os_family [{{ ansible_os_family }}]"
   when: doctl_debug
 
 # FreeBSD
@@ -9,13 +10,12 @@
   pkgng:
     name: "{{ doctl_packages }}"
   register: result
-  retries: "{{ freebsd_install_retries }}"
   until: result is succeeded
+  retries: "{{ freebsd_install_retries }}"
   delay: "{{ freebsd_install_delay }}"
   when:
     - ansible_os_family == "FreeBSD"
     - freebsd_install_method|lower == "packages"
-  tags: bsd_packages
 
 - name: "packages: Install ports FreeBSD"
   portinstall:
@@ -23,13 +23,12 @@
     use_packages: "{{ freebsd_use_packages }}"
   loop: "{{ doctl_packages }}"
   register: result
-  retries: "{{ freebsd_install_retries }}"
   until: result is succeeded
+  retries: "{{ freebsd_install_retries }}"
   delay: "{{ freebsd_install_delay }}"
   when:
     - ansible_os_family == "FreeBSD"
     - freebsd_install_method|lower == "ports"
-  tags: bsd_ports
 
 # Linux
 - name: "packages: Install packages Linux"
@@ -37,12 +36,11 @@
     name: "{{ item }}"
   loop: "{{ doctl_packages }}"
   register: result
-  retries: "{{ linux_install_retries }}"
   until: result is succeeded
+  retries: "{{ linux_install_retries }}"
   delay: "{{ linux_install_delay }}"
   when: (ansible_os_family == "Debian") or
         (ansible_os_family == "RedHat")
-  tags: linux_packages
 
 # EOF
 ...

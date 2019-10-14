@@ -6,7 +6,7 @@
     path: "{{ doctl_source_dest }}"
   tags: doctl_source_fetch
 
-- name: "source: Download sources from {{ doctl_source_url }}/{{ doctl_source_file }} to {{ doctl_source_dest }}"
+- name: "source: Download sources from {{ doctl_source_url }}/{{ doctl_source_file }}"
   get_url:
     url: "{{ doctl_source_url }}/{{ doctl_source_file }}"
     dest: "{{ doctl_source_dest }}/{{ doctl_source_file }}"

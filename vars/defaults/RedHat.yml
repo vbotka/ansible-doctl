@@ -9,5 +9,7 @@ doctl_bin_owner: "root"
 doctl_bin_group: "root"
 doctl_bin_mode: "0755"
 
+doctl_pip_executable: "/usr/bin/pip3"
+
 # EOF
 ...
