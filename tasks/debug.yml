@@ -19,6 +19,7 @@
          doctl_dobro [{{ doctl_dobro }}]
          doctl_dobro_name [{{ doctl_dobro_name }}]
 
+         doctl_install [{{ doctl_install }}]
          doctl_packages
          {{ doctl_packages|to_nice_yaml }}
          doctl_bin_dir [{{ doctl_bin_dir }}]

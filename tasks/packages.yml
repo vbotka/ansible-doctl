@@ -3,7 +3,7 @@
 - name: "packages: Debug"
   debug:
     msg: "ansible_os_family [{{ ansible_os_family }}]"
-  when: doctl_debug
+  when: doctl_debug|bool
 
 # FreeBSD
 - name: "packages: Install packages FreeBSD"

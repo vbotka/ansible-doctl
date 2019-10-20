@@ -1,6 +1,7 @@
 ---
 # default vars for vbotka.doctl
 
+doctl_install: true
 doctl_debug: false
 
 # FreeBSD

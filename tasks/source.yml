@@ -21,7 +21,7 @@
 
 - debug:
     msg: "doctl_source_file_downloaded {{ doctl_source_file_downloaded }}"
-  when: doctl_debug
+  when: doctl_debug|bool
   tags: doctl_source_extract
 
 - name: "source: Create directory {{ doctl_source_dest }}/doctl-{{ doctl_source_version }}"

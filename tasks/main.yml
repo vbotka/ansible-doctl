@@ -5,10 +5,11 @@
   tags: [doctl_vars, always]
 
 - import_tasks: debug.yml
-  when: doctl_debug
+  when: doctl_debug|bool
   tags: [doctl_debug, always]
 
 - import_tasks: packages.yml
+  when: doctl_install|bool
   tags: doctl_packages
 
 - import_tasks: source.yml
@@ -18,7 +19,7 @@
   tags: doctl_copy
 
 - include_tasks: dobro.yml
-  when: doctl_dobro
+  when: doctl_dobro|bool
   tags: doctl_dobro
 
 # EOF
