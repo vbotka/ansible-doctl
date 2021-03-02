@@ -1,6 +1,6 @@
 # doctl (Digital Ocean Control)
 
-[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/config_light)[![Build Status](https://travis-ci.org/vbotka/ansible-doctl.svg?branch=master)](https://travis-ci.org/vbotka/ansible-doctl)
+[![quality](https://img.shields.io/ansible/quality/27910)](https://galaxy.ansible.com/vbotka/doctl)[![Build Status](https://travis-ci.org/vbotka/ansible-doctl.svg?branch=master)](https://travis-ci.org/vbotka/ansible-doctl)
 
 [Ansible role](https://galaxy.ansible.com/vbotka/doctl/) Install [doctl](https://github.com/digitalocean/doctl/).
 
