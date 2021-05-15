@@ -8,10 +8,9 @@
 - Optionaly install [dobro](https://gitlab.com/snoopdouglas/dobro) - management of droplets by tag.
 - See [examples](https://github.com/vbotka/ansible-doctl/blob/master/contrib/).
 
-Feel free to [share your feedback and report issues](https://github.com/vbotka/ansible-bsdutils/issues).
-
-[Contributions are welcome](https://github.com/firstcontributions/first-contributions).
-
+  ###################################################################
+  # THIS ROLE IS OBSOLETE. USE AVAILABLE PACKAGES TO INSTALL DOCTL. #
+  ###################################################################
 
 ## Requirements
 
