@@ -1,9 +1,9 @@
 ---
 language: python
-python: "3.7"
+python: "3.8"
 
 # Use the new container infrastructure
-sudo: False
+sudo: false
 
 # Install ansible
 addons:
